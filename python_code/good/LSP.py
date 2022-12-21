@@ -29,11 +29,9 @@ def main():
     prisoner = Prisoner()
     print("The prisoner trying to walk to north by 10 and east by -3.")
     
-    try:
-        prisoner.walk_North(10)
-        prisoner.walk_East(-3)
-    except:
-        pass
+    prisoner.walk_North(10)
+    prisoner.walk_East(-3)
+
     
     print("The location of the prison: {}".format(prisoner.PRISON_LOCATION))
     print("The current position of the prisoner: {}".format(prisoner.position))

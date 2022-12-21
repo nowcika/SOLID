@@ -94,11 +94,10 @@ def main():
 
     work_manager.set_worker(Robot())
     work_manager.manage()
-    try:
-        break_manager.set_worker(Robot())
-        break_manager.lunch_break()
-    except:
-        pass
+
+    break_manager.set_worker(Robot())
+    break_manager.lunch_break()
+
     
 if __name__ == '__main__':
     main()
