@@ -4,6 +4,7 @@
 from abc import ABCMeta, abstractmethod
 import time
 
+
 class AbstractWorker(object):
     __metaclass__ = ABCMeta
 
@@ -15,6 +16,7 @@ class AbstractWorker(object):
     def eat(self):
         pass
 
+
 class Worker(AbstractWorker):
 
     def work(self):
@@ -23,6 +25,7 @@ class Worker(AbstractWorker):
     def eat(self):
         print ("Lunch break....(5 secs)")
         time.sleep(5)
+
 
 class SuperWorker(AbstractWorker):
 
@@ -40,7 +43,8 @@ class Manager(object):
         self.worker = None
 
     def set_worker(self, worker):
-        assert isinstance(worker, AbstractWorker), "`worker` must be of type {}".format(AbstractWorker)
+        assert isinstance(
+            worker, AbstractWorker), "`worker` must be of type {}".format(AbstractWorker)
 
         self.worker = worker
 
@@ -53,13 +57,16 @@ class Manager(object):
 # Implement the `Robot` class. However, due to the api defined by `AbstractWorker`,
 # we have to reimplement `eat` method which is not necessary for a `Robot`.
 
+
 class Robot(AbstractWorker):
 
     def work(self):
         print ("I'm a robot. I'm working....")
 
     def eat(self):
-        print ("I don't need to eat....")   # This code doing nothing but it is a must. (Bad!)
+
+        # This code doing nothing but it is a must. (Bad!)
+        print ("I don't need to eat....")
 
 def main():
 
@@ -79,6 +86,7 @@ def main():
     manager.manage()
     # However, a robot can eat.....
     manager.lunch_break()
+
 
 if __name__ == '__main__':
     main()
