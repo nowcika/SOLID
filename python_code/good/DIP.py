@@ -18,7 +18,7 @@ class IWorker(object):
 class Worker(IWorker):
 
     def work(self):
-        print "I'm working!!"
+        print ("I'm working!!")
 
 
 class Manager(object):
